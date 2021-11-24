@@ -3,6 +3,8 @@ package beater
 import (
 	"fmt"
 	"time"
+	"io/ioutil"
+	"path/filepath"
 
 	"github.com/elastic/beats/v7/libbeat/beat"
 	"github.com/elastic/beats/v7/libbeat/common"
@@ -45,20 +47,21 @@ func (bt *listbeat) Run(b *beat.Beat) error {
 	ticker := time.NewTicker(bt.config.Period)
 	counter := 1
 	for {
+		bt.listDir(bt.config.Path, b.Info.Name) // call listDir
 		select {
 		case <-bt.done:
 			return nil
 		case <-ticker.C:
 		}
 
-		event := beat.Event{
+		/*event := beat.Event{
 			Timestamp: time.Now(),
 			Fields: common.MapStr{
 				"type":    b.Info.Name,
 				"counter": counter,
 			},
 		}
-		bt.client.Publish(event)
+		bt.client.Publish(event)*/
 		logp.Info("Event sent")
 		counter++
 	}
@@ -68,4 +71,27 @@ func (bt *listbeat) Run(b *beat.Beat) error {
 func (bt *listbeat) Stop() {
 	bt.client.Close()
 	close(bt.done)
+}
+
+func (bt *listbeat) listDir(dirFile string, beatname string) {
+	files, _ := ioutil.ReadDir(dirFile)
+	for _, f := range files {
+		t := f.ModTime()
+		path := filepath.Join(dirFile, f.Name())
+		event := beat.Event {
+			Fields: common.MapStr{
+				"@timestamp": common.Time(time.Now()),
+				"type":       beatname,
+				"modtime":    common.Time(t),
+				"filename":   f.Name(),
+				"path":       path,
+				"directory":  f.IsDir(),
+				"filesize":   f.Size(),
+			},
+		}
+		bt.client.Publish(event)
+		if f.IsDir() {
+			bt.listDir(path, beatname)
+		}
+	}
 }

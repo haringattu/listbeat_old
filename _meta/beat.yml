@@ -1,0 +1,3 @@
+listbeat:
+  period: 10s
+  path: "."

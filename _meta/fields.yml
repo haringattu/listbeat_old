@@ -7,3 +7,13 @@
       required: true
       description: >
         PLEASE UPDATE DOCUMENTATION
+    # new fields added to listbeat
+    - name: modtime
+      type: date
+    - name: filename
+      type: text
+    - name: path
+    - name: directory
+      type: boolean
+    - name: filesize
+      type: long

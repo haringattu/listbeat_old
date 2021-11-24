@@ -14394,6 +14394,39 @@ required: True
 
 --
 
+*`modtime`*::
++
+--
+type: date
+
+--
+
+*`filename`*::
++
+--
+type: text
+
+--
+
+*`path`*::
++
+--
+--
+
+*`directory`*::
++
+--
+type: boolean
+
+--
+
+*`filesize`*::
++
+--
+type: long
+
+--
+
 [[exported-fields-process]]
 == Process fields
 

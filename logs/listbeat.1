@@ -1,0 +1,57 @@
+2021-11-24T08:04:37.916Z	INFO	instance/beat.go:665	Home path: [/home/ubuntu/beats/src/github.com/haringattu/listbeat] Config path: [/home/ubuntu/beats/src/github.com/haringattu/listbeat] Data path: [/home/ubuntu/beats/src/github.com/haringattu/listbeat/data] Logs path: [/home/ubuntu/beats/src/github.com/haringattu/listbeat/logs]
+2021-11-24T08:04:37.916Z	INFO	instance/beat.go:673	Beat ID: 726db997-cd17-48c8-8c87-a34b507f8f30
+2021-11-24T08:04:37.917Z	INFO	[seccomp]	seccomp/seccomp.go:124	Syscall filter successfully installed
+2021-11-24T08:04:37.917Z	INFO	[beat]	instance/beat.go:1014	Beat info	{"system_info": {"beat": {"path": {"config": "/home/ubuntu/beats/src/github.com/haringattu/listbeat", "data": "/home/ubuntu/beats/src/github.com/haringattu/listbeat/data", "home": "/home/ubuntu/beats/src/github.com/haringattu/listbeat", "logs": "/home/ubuntu/beats/src/github.com/haringattu/listbeat/logs"}, "type": "listbeat", "uuid": "726db997-cd17-48c8-8c87-a34b507f8f30"}}}
+2021-11-24T08:04:37.917Z	INFO	[beat]	instance/beat.go:1023	Build info	{"system_info": {"build": {"commit": "0c55d6644a9227408e4753d440436934e07e5255", "libbeat": "7.15.3", "time": "2021-11-24T08:01:41.000Z", "version": "7.15.3"}}}
+2021-11-24T08:04:37.917Z	INFO	[beat]	instance/beat.go:1026	Go runtime info	{"system_info": {"go": {"os":"linux","arch":"amd64","max_procs":1,"version":"go1.17.2"}}}
+2021-11-24T08:04:37.918Z	INFO	[beat]	instance/beat.go:1030	Host info	{"system_info": {"host": {"architecture":"x86_64","boot_time":"2021-11-24T05:05:18Z","containerized":false,"name":"ip-172-31-5-46","ip":["127.0.0.1/8","::1/128","172.31.5.46/20","fe80::6d:e9ff:fef4:4761/64"],"kernel_version":"5.11.0-1020-aws","mac":["02:6d:e9:f4:47:61"],"os":{"type":"linux","family":"debian","platform":"ubuntu","name":"Ubuntu","version":"20.04.2 LTS (Focal Fossa)","major":20,"minor":4,"patch":2,"codename":"focal"},"timezone":"UTC","timezone_offset_sec":0,"id":"1cbbf23da2844824b8e190ac466c2a37"}}}
+2021-11-24T08:04:37.918Z	INFO	[beat]	instance/beat.go:1059	Process info	{"system_info": {"process": {"capabilities": {"inheritable":null,"permitted":null,"effective":null,"bounding":["chown","dac_override","dac_read_search","fowner","fsetid","kill","setgid","setuid","setpcap","linux_immutable","net_bind_service","net_broadcast","net_admin","net_raw","ipc_lock","ipc_owner","sys_module","sys_rawio","sys_chroot","sys_ptrace","sys_pacct","sys_admin","sys_boot","sys_nice","sys_resource","sys_time","sys_tty_config","mknod","lease","audit_write","audit_control","setfcap","mac_override","mac_admin","syslog","wake_alarm","block_suspend","audit_read","38","39","40"],"ambient":null}, "cwd": "/home/ubuntu/beats/src/github.com/haringattu/listbeat", "exe": "/home/ubuntu/beats/src/github.com/haringattu/listbeat/listbeat", "name": "listbeat", "pid": 6087, "ppid": 837, "seccomp": {"mode":"filter","no_new_privs":true}, "start_time": "2021-11-24T08:04:37.020Z"}}}
+2021-11-24T08:04:37.918Z	INFO	instance/beat.go:309	Setup Beat: listbeat; Version: 7.15.3
+2021-11-24T08:04:37.918Z	INFO	[index-management]	idxmgmt/std.go:184	Set output.elasticsearch.index to 'listbeat-7.15.3' as ILM is enabled.
+2021-11-24T08:04:37.918Z	INFO	[esclientleg]	eslegclient/connection.go:100	elasticsearch url: http://localhost:9200
+2021-11-24T08:04:37.919Z	INFO	[publisher]	pipeline/module.go:113	Beat name: ip-172-31-5-46
+2021-11-24T08:04:37.919Z	INFO	[monitoring]	log/log.go:142	Starting metrics logging every 30s
+2021-11-24T08:04:37.919Z	INFO	instance/beat.go:473	listbeat start running.
+2021-11-24T08:04:37.919Z	INFO	beater/Listbeat.go:40	listbeat is running! Hit CTRL-C to stop it.
+2021-11-24T08:04:37.923Z	INFO	[add_cloud_metadata]	add_cloud_metadata/add_cloud_metadata.go:105	add_cloud_metadata: hosting provider type detected as aws, metadata={"cloud":{"account":{"id":"472754780864"},"availability_zone":"eu-west-1c","image":{"id":"ami-0a8e758f5e873d1c1"},"instance":{"id":"i-085d5be667c632069"},"machine":{"type":"t2.micro"},"provider":"aws","region":"eu-west-1","service":{"name":"EC2"}}}
+2021-11-24T08:04:38.920Z	INFO	beater/Listbeat.go:68	Event sent
+2021-11-24T08:04:38.924Z	INFO	[publisher_pipeline_output]	pipeline/output.go:143	Connecting to backoff(elasticsearch(http://localhost:9200))
+2021-11-24T08:04:38.925Z	INFO	[publisher]	pipeline/retry.go:219	retryer: send unwait signal to consumer
+2021-11-24T08:04:38.925Z	INFO	[publisher]	pipeline/retry.go:223	  done
+2021-11-24T08:04:38.925Z	ERROR	[esclientleg]	transport/logging.go:37	Error dialing dial tcp 127.0.0.1:9200: connect: connection refused	{"network": "tcp", "address": "localhost:9200"}
+2021-11-24T08:04:39.920Z	INFO	beater/Listbeat.go:68	Event sent
+2021-11-24T08:04:40.232Z	ERROR	[publisher_pipeline_output]	pipeline/output.go:154	Failed to connect to backoff(elasticsearch(http://localhost:9200)): Get "http://localhost:9200": dial tcp 127.0.0.1:9200: connect: connection refused
+2021-11-24T08:04:40.232Z	INFO	[publisher_pipeline_output]	pipeline/output.go:145	Attempting to reconnect to backoff(elasticsearch(http://localhost:9200)) with 1 reconnect attempt(s)
+2021-11-24T08:04:40.233Z	INFO	[publisher]	pipeline/retry.go:219	retryer: send unwait signal to consumer
+2021-11-24T08:04:40.233Z	INFO	[publisher]	pipeline/retry.go:223	  done
+2021-11-24T08:04:40.233Z	ERROR	[esclientleg]	transport/logging.go:37	Error dialing dial tcp 127.0.0.1:9200: connect: connection refused	{"network": "tcp", "address": "localhost:9200"}
+2021-11-24T08:04:40.920Z	INFO	beater/Listbeat.go:68	Event sent
+2021-11-24T08:04:41.920Z	INFO	beater/Listbeat.go:68	Event sent
+2021-11-24T08:04:42.382Z	ERROR	[publisher_pipeline_output]	pipeline/output.go:154	Failed to connect to backoff(elasticsearch(http://localhost:9200)): Get "http://localhost:9200": dial tcp 127.0.0.1:9200: connect: connection refused
+2021-11-24T08:04:42.382Z	INFO	[publisher_pipeline_output]	pipeline/output.go:145	Attempting to reconnect to backoff(elasticsearch(http://localhost:9200)) with 2 reconnect attempt(s)
+2021-11-24T08:04:42.383Z	INFO	[publisher]	pipeline/retry.go:219	retryer: send unwait signal to consumer
+2021-11-24T08:04:42.383Z	INFO	[publisher]	pipeline/retry.go:223	  done
+2021-11-24T08:04:42.383Z	ERROR	[esclientleg]	transport/logging.go:37	Error dialing dial tcp 127.0.0.1:9200: connect: connection refused	{"network": "tcp", "address": "localhost:9200"}
+2021-11-24T08:04:42.920Z	INFO	beater/Listbeat.go:68	Event sent
+2021-11-24T08:04:43.920Z	INFO	beater/Listbeat.go:68	Event sent
+2021-11-24T08:04:44.920Z	INFO	beater/Listbeat.go:68	Event sent
+2021-11-24T08:04:45.920Z	INFO	beater/Listbeat.go:68	Event sent
+2021-11-24T08:04:46.920Z	INFO	beater/Listbeat.go:68	Event sent
+2021-11-24T08:04:47.186Z	ERROR	[publisher_pipeline_output]	pipeline/output.go:154	Failed to connect to backoff(elasticsearch(http://localhost:9200)): Get "http://localhost:9200": dial tcp 127.0.0.1:9200: connect: connection refused
+2021-11-24T08:04:47.186Z	INFO	[publisher_pipeline_output]	pipeline/output.go:145	Attempting to reconnect to backoff(elasticsearch(http://localhost:9200)) with 3 reconnect attempt(s)
+2021-11-24T08:04:47.186Z	INFO	[publisher]	pipeline/retry.go:219	retryer: send unwait signal to consumer
+2021-11-24T08:04:47.186Z	INFO	[publisher]	pipeline/retry.go:223	  done
+2021-11-24T08:04:47.186Z	ERROR	[esclientleg]	transport/logging.go:37	Error dialing dial tcp 127.0.0.1:9200: connect: connection refused	{"network": "tcp", "address": "localhost:9200"}
+2021-11-24T08:04:47.920Z	INFO	beater/Listbeat.go:68	Event sent
+2021-11-24T08:04:48.920Z	INFO	beater/Listbeat.go:68	Event sent
+2021-11-24T08:04:49.920Z	INFO	beater/Listbeat.go:68	Event sent
+2021-11-24T08:04:50.920Z	INFO	beater/Listbeat.go:68	Event sent
+2021-11-24T08:04:51.920Z	INFO	beater/Listbeat.go:68	Event sent
+2021-11-24T08:04:52.920Z	INFO	beater/Listbeat.go:68	Event sent
+2021-11-24T08:04:53.920Z	INFO	beater/Listbeat.go:68	Event sent
+2021-11-24T08:04:54.920Z	INFO	beater/Listbeat.go:68	Event sent
+2021-11-24T08:04:55.920Z	INFO	beater/Listbeat.go:68	Event sent
+2021-11-24T08:04:56.285Z	INFO	[monitoring]	log/log.go:192	Total metrics	{"monitoring": {"metrics": {"beat":{"cgroup":{"cpu":{"cfs":{"period":{"us":100000},"quota":{"us":0}},"id":"user.slice","stats":{"periods":0,"throttled":{"ns":0,"periods":0}}},"cpuacct":{"id":"user.slice","total":{"ns":255293765246}},"memory":{"id":"session-1.scope","mem":{"limit":{"bytes":9223372036854771712},"usage":{"bytes":252706816}}}},"cpu":{"system":{"ticks":10,"time":{"ms":17}},"total":{"ticks":40,"time":{"ms":56},"value":40},"user":{"ticks":30,"time":{"ms":39}}},"handles":{"limit":{"hard":1048576,"soft":1024},"open":9},"info":{"ephemeral_id":"cb818308-8b29-4a36-bafc-52f047be2d7b","uptime":{"ms":18394},"version":"7.15.3"},"memstats":{"gc_next":7156000,"memory_alloc":4701920,"memory_sys":19743752,"memory_total":11618680,"rss":60944384},"runtime":{"goroutines":9}},"libbeat":{"config":{"module":{"running":0,"starts":0,"stops":0},"reloads":0,"scans":0},"output":{"events":{"acked":0,"active":0,"batches":0,"dropped":0,"duplicates":0,"failed":0,"toomany":0,"total":0},"read":{"bytes":0,"errors":0},"type":"elasticsearch","write":{"bytes":0,"errors":0}},"pipeline":{"clients":0,"events":{"active":1,"dropped":0,"failed":0,"filtered":0,"published":1,"retry":3,"total":1},"queue":{"acked":0,"max_events":4096}}},"system":{"cpu":{"cores":1},"load":{"1":0.01,"15":0,"5":0.03,"norm":{"1":0.01,"15":0,"5":0.03}}}}}}
+2021-11-24T08:04:56.285Z	INFO	[monitoring]	log/log.go:193	Uptime: 18.395151516s
+2021-11-24T08:04:56.285Z	INFO	[monitoring]	log/log.go:160	Stopping metrics logging.
+2021-11-24T08:04:56.285Z	INFO	instance/beat.go:479	listbeat stopped.
